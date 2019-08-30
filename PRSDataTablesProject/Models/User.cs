@@ -29,8 +29,14 @@ namespace PRSDataTablesProject.Models {
 
         [MaxLength(12)]
         public string Phone { get; set; }
+
+        [MaxLength(255)]
         public string Email { get; set; }
+
+        [Required]
         public bool IsReviewer { get; set; }
+
+        [Required]
         public bool IsAdmin { get; set; }
 
 
