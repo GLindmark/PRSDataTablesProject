@@ -13,9 +13,9 @@ namespace PRSDataTablesProject.Models {
         [MaxLength(30)]
         [Required]
         public string Code { get; set; }
+
         [MaxLength(30)]
         [Required]
-
         public string Name { get; set; }
 
         [MaxLength(30)]
@@ -37,9 +37,10 @@ namespace PRSDataTablesProject.Models {
         [MaxLength(12)]
         public string Phone { get; set; }
 
-
         [MaxLength(255)]
         public string Email { get; set; }
+
+        public Product PartNbr { get; set; }
 
 
 

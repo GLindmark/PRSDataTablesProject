@@ -26,7 +26,6 @@ namespace PRSDataTablesProject.Models {
         [Required]
         public string Lastname { get; set; }
 
-
         [MaxLength(12)]
         public string Phone { get; set; }
 

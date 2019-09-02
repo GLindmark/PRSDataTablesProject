@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Castle.MicroKernel.SubSystems.Conversion;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -27,16 +28,16 @@ namespace PRSDataTablesProject.Models {
         [MaxLength(30)]
         public string Unit { get; set; }
 
-
         [MaxLength(255)]
         public string Photopath { get; set; }
 
-
         [Required]
         public int VendorId { get; set; }
+        public Vendor Vendor { get; set; }
 
 
-
+    }
+}
 
 
 
@@ -51,7 +52,3 @@ namespace PRSDataTablesProject.Models {
 //| Unit       | String  | No   | 30   | No     | No  | No  | No  | No  |       |
 //| PhotoPath  | String  | Yes  | 255  | No     | No  | No  | No  | No  |       |//The pics are not stored in the db, only the path to the image?  To network share? a Url?
 //| VendorId   | Integer | No   | N/A  | No     | No  | Yes | No  | No  | FK to Vendor |//a FK constraint(use EF to enforce).  Refuse to save the Product if it is not assigned to a valid Vendor
-
-​
-    }
-}
