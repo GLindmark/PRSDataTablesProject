@@ -10,6 +10,7 @@ namespace PRSDataTablesProject.Models {
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
             modelBuilder.Entity<Product>(pn => {
                 pn.Property(p => p.Price).HasColumnType("decimal(11, 2)");
+                });
 
                 modelBuilder.Entity<Product>()
                 .HasIndex(p => p.PartNbr)
@@ -25,7 +26,6 @@ namespace PRSDataTablesProject.Models {
 
                 modelBuilder.Entity<Request>(rt => {
                     rt.Property(r => r.Total).HasColumnType("decimal(11, 2)");
-                });
             });
             }
 
@@ -34,11 +34,13 @@ namespace PRSDataTablesProject.Models {
 
         public DbSet<User> Users { get; set; }
 
-        public DbSet<Request> MyProperty { get; set; }
-
         public DbSet<Vendor> Vendors { get; set; }
 
         public DbSet<Product> Products { get; set; }
+
+        public DbSet<Request> Requests { get; set; }
+
+        public DbSet<RequestLine> RequestLines { get; set; }
 
 
         public PRSdb(DbContextOptions options) : base(options) {
